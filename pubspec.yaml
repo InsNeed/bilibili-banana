@@ -1,0 +1,51 @@
+name: news
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  #bolc
+  flutter_bloc: ^8.1.2
+  #compare dart objects
+  equatable: ^2.0.5
+  #services
+  get_it: ^7.6.0
+  #dataFormat
+  intl: ^0.18.1
+  #Database
+  floor: ^1.4.2
+  #request to api
+  retrofit: ^3.0.0
+  #kind of provider
+  flutter_hooks: ^0.18.3
+  #cache network
+  cached_network_image: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  floor_generator: ^1.4.2
+  retrofit_generator: ^4.2.0
+  #add these
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/muli/Muli.ttf
+        - asset: assets/fonts/muli/Muli-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/muli/Muli-Light.ttf
+          weight: 300
