@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ArticleEntity extends Equatable {
+  final int? id = null;
   final String? title;
   final String? hot;
   final String? url;

@@ -6,7 +6,17 @@ import 'package:news/features/daily_news/domain/entityies/articel.dart';
 
 class ArticleWidget extends StatelessWidget {
   final ArticleEntity? articles;
-  const ArticleWidget({Key? key, this.articles}) : super(key: key);
+  final bool isRemovable;
+  final Function(ArticleEntity)? onRemove;
+  final Function(ArticleEntity)? onArticlePressed;
+
+  const ArticleWidget(
+      {Key? key,
+      this.articles,
+      this.isRemovable = false,
+      this.onRemove,
+      this.onArticlePressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

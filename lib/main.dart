@@ -1,7 +1,10 @@
+import 'package:floor/floor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:news/config/theme/app_themes.dart';
+import 'package:news/features/daily_news/data/datasources/local/app_database.dart';
+import 'package:news/features/daily_news/data/datasources/local/dao/article_dao.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_event.dart';
 import 'package:news/features/daily_news/presentatsion/pages/home/daily_news.dart';
@@ -16,8 +19,10 @@ import 'dart:convert';
 Future<void> main() async {
   // var data = await fetchData();
   // print(data);
-
   await initializeDependencies();
+  WidgetsFlutterBinding.ensureInitialized(); //确保数据库完全初始化
+
+
   runApp(const MainApp());
 }
 
