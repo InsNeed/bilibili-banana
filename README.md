@@ -1,7 +1,9 @@
 # Bilibili 今日前100排行
 
-Flutter & Clean Architecture ,获取 Bilibili 当日的前 100 排行榜数据。数据通过 API 获取，并使用 Floor 数据库进行本地缓存。
+这是一个使用 **Flutter** 和 **Clean Architecture** 架构的项目，旨在获取 Bilibili 当日的前 100 排行榜数据。数据通过 API 获取，并使用 **Floor 数据库** 进行本地缓存。
 
+
+## 项目架构
 
 ```mermaid
 flowchart TD
@@ -48,7 +50,3 @@ flowchart TD
         API
         MD
     end
-
-
-```bash
-git clone https://github.com/InsNeed/bilibili-banana
