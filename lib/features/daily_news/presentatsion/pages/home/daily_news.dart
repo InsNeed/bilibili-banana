@@ -38,7 +38,6 @@ class DailyNews extends StatelessWidget {
           },
           icon: const Icon(
             Icons.menu,
-            color: Colors.black,
           ),
         ),
         BlocBuilder<ThemeBloc, ThemeState>(
@@ -50,7 +49,6 @@ class DailyNews extends StatelessWidget {
               },
               icon: Icon(
                 isLightTheme ? Icons.light_mode : Icons.dark_mode,
-                color: Colors.black,
               ),
             );
           },

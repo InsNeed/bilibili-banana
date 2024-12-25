@@ -31,7 +31,6 @@ class ArticleDetailsView extends HookWidget {
                 onTap: () => _onBackButtonTapped(context),
                 child: const Icon(
                   Icons.chevron_left_outlined,
-                  color: Colors.black,
                 ),
               )),
       title: Text(article!.title!),
@@ -108,7 +107,6 @@ class ArticleDetailsView extends HookWidget {
               onPressed: () => _onFloatingActionButtonPressed(context),
               child: const Icon(
                 Icons.bookmark,
-                color: Colors.white,
               ),
             ));
   }
@@ -116,8 +114,7 @@ class ArticleDetailsView extends HookWidget {
   void _onFloatingActionButtonPressed(BuildContext context) {
     BlocProvider.of<LocalArticleBloc>(context).add(SaveArticle(article!));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-          content: Text('Your message here'), backgroundColor: Colors.black),
+      SnackBar(content: Text('Saved')),
     );
   }
 
