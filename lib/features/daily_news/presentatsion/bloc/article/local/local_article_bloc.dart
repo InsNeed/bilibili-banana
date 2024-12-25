@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:news/features/daily_news/domain/entityies/articel.dart';
 import 'package:news/features/daily_news/domain/repository/article_repository.dart';
-import 'package:news/features/daily_news/domain/usecases/get_saved_article.dart';
-import 'package:news/features/daily_news/domain/usecases/remove_article.dart';
-import 'package:news/features/daily_news/domain/usecases/save_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/get_saved_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/remove_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/save_article.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_event.dart';
 
 part 'local_article_event.dart';

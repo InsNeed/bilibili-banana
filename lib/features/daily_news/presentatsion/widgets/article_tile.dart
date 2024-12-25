@@ -92,7 +92,6 @@ class ArticleWidget extends StatelessWidget {
               style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
-                  color: Colors.black,
                   fontFamily: 'Butler')),
           Expanded(
               child: Padding(

@@ -5,6 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/features/daily_news/domain/entityies/articel.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_state.dart';
+import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_bloc.dart';
+import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_event.dart';
+import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_state.dart';
 import 'package:news/features/daily_news/presentatsion/pages/article_detail/article_detail.dart';
 import 'package:news/features/daily_news/presentatsion/pages/saved_article/saved_article.dart';
 import 'package:news/features/daily_news/presentatsion/widgets/article_tile.dart';
@@ -24,21 +27,34 @@ class DailyNews extends StatelessWidget {
     return AppBar(
       title: const Text(
         'Daily News',
-        style: TextStyle(
-          color: Colors.black,
-        ),
+        style: TextStyle(),
       ),
       actions: [
         IconButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return SavedArticles();
-              }));
-            },
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.black,
-            ))
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) {
+              return SavedArticles();
+            }));
+          },
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+        ),
+        BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, state) {
+            final isLightTheme = state.themeData == ThemeData.light();
+            return IconButton(
+              onPressed: () {
+                context.read<ThemeBloc>().add(ToggleThemeEvent());
+              },
+              icon: Icon(
+                isLightTheme ? Icons.light_mode : Icons.dark_mode,
+                color: Colors.black,
+              ),
+            );
+          },
+        ),
       ],
     );
   }

@@ -1,4 +1,6 @@
+import 'package:desktop_window/desktop_window.dart';
 import 'package:floor/floor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -7,6 +9,8 @@ import 'package:news/features/daily_news/data/datasources/local/app_database.dar
 import 'package:news/features/daily_news/data/datasources/local/dao/article_dao.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_event.dart';
+import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_bloc.dart';
+import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_state.dart';
 import 'package:news/features/daily_news/presentatsion/pages/home/daily_news.dart';
 import 'injection_containner.dart';
 import 'package:dio/dio.dart';
@@ -22,8 +26,9 @@ Future<void> main() async {
   await initializeDependencies();
   WidgetsFlutterBinding.ensureInitialized(); //确保数据库完全初始化
 
-
   runApp(const MainApp());
+
+  _setWindowSize();
 }
 
 class MainApp extends StatelessWidget {
@@ -31,20 +36,33 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<RemoteArticleBloc>(
-      //TODO:why?
-      // create: (context) => BlocProvider.of<RemoteArticleBloc>(context)..add(GetArticles()),
-      create: (context) => sl()..add(GetArticles()),
-
-      child: MaterialApp(
-        theme: theme(),
-        debugShowCheckedModeBanner: false,
-        home: const DailyNews(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<RemoteArticleBloc>(
+            create: (context) => sl()..add(GetArticles())), //将状态添加并触发
+        BlocProvider<ThemeBloc>(create: (context) => ThemeBloc()),
+      ],
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (context, themeState) {
+          return MaterialApp(
+            theme: themeState.themeData, // 使用 ThemeBloc 中的主题数据
+            debugShowCheckedModeBanner: false,
+            home: const DailyNews(),
+            themeMode: ThemeMode.system,
+          );
+        },
       ),
     );
   }
 }
 
+void _setWindowSize() {
+  if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.windows)) {
+    // 设置初始窗口大小，单位为像素
+    DesktopWindow.setWindowSize(const Size(600, 900)); // 设置窗口大小为800x600
+    DesktopWindow.setMinWindowSize(const Size(600, 900)); // 设置窗口最小大小
+  }
+}
 // Future<List<Map<String, String>>> fetchData() async {
 //   String? url = "https://api.vvhan.com/api/hotlist/bili";
 

@@ -28,6 +28,7 @@ dependencies:
   flutter_hooks: ^0.18.3
   #cache network
   cached_network_image: ^3.2.0
+  desktop_window: ^0.4.2
 
 dev_dependencies:
   flutter_test:

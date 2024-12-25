@@ -5,10 +5,10 @@ import 'package:news/features/daily_news/data/datasources/remote/news_api_serivc
 import 'package:news/features/daily_news/data/repository/article_repository.dart';
 import 'package:news/features/daily_news/domain/entityies/articel.dart';
 import 'package:news/features/daily_news/domain/repository/article_repository.dart';
-import 'package:news/features/daily_news/domain/usecases/get_article.dart';
-import 'package:news/features/daily_news/domain/usecases/get_saved_article.dart';
-import 'package:news/features/daily_news/domain/usecases/remove_article.dart';
-import 'package:news/features/daily_news/domain/usecases/save_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/get_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/get_saved_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/remove_article.dart';
+import 'package:news/features/daily_news/domain/usecases/articles/save_article.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/local/local_article_bloc.dart';
 import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
 
