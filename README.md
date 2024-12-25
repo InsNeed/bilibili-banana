@@ -4,4 +4,4 @@ Flutter & Clean Architecture ,获取 Bilibili 当日的前 100 排行榜数据�
 
 
 ```bash
-git clone https://github.com/InsNeed/bili---banana
+git clone https://github.com/InsNeed/bilibili-banana
