@@ -6,7 +6,7 @@ import 'package:news/features/daily_news/domain/repository/article_repository.da
 import 'package:news/features/daily_news/domain/usecases/articles/get_saved_article.dart';
 import 'package:news/features/daily_news/domain/usecases/articles/remove_article.dart';
 import 'package:news/features/daily_news/domain/usecases/articles/save_article.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_event.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
 
 part 'local_article_event.dart';
 part 'local_article_state.dart';

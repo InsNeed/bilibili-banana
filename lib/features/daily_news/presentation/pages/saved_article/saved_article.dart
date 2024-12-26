@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:news/features/daily_news/domain/entityies/articel.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/local/local_article_bloc.dart';
-import 'package:news/features/daily_news/presentatsion/widgets/article_tile.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/local/local_article_bloc.dart';
+import 'package:news/features/daily_news/presentation/widgets/article_tile.dart';
 import 'package:news/injection_containner.dart';
 
 class SavedArticles extends HookWidget {

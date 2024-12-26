@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/features/daily_news/domain/entityies/articel.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_state.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_bloc.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_event.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_state.dart';
-import 'package:news/features/daily_news/presentatsion/pages/article_detail/article_detail.dart';
-import 'package:news/features/daily_news/presentatsion/pages/saved_article/saved_article.dart';
-import 'package:news/features/daily_news/presentatsion/widgets/article_tile.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
+import 'package:news/features/daily_news/presentation/bloc/theme/bloc/theme_bloc.dart';
+import 'package:news/features/daily_news/presentation/bloc/theme/bloc/theme_event.dart';
+import 'package:news/features/daily_news/presentation/bloc/theme/bloc/theme_state.dart';
+import 'package:news/features/daily_news/presentation/pages/article_detail/article_detail.dart';
+import 'package:news/features/daily_news/presentation/pages/saved_article/saved_article.dart';
+import 'package:news/features/daily_news/presentation/widgets/article_tile.dart';
 
 class DailyNews extends StatelessWidget {
   const DailyNews({super.key});

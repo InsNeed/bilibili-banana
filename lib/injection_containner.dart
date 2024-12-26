@@ -9,8 +9,8 @@ import 'package:news/features/daily_news/domain/usecases/articles/get_article.da
 import 'package:news/features/daily_news/domain/usecases/articles/get_saved_article.dart';
 import 'package:news/features/daily_news/domain/usecases/articles/remove_article.dart';
 import 'package:news/features/daily_news/domain/usecases/articles/save_article.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/local/local_article_bloc.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/article/remote/remote_article_bloc.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/local/local_article_bloc.dart';
+import 'package:news/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
 
 final sl = GetIt.instance; //service locator 用于注册和检索应用服务
 
