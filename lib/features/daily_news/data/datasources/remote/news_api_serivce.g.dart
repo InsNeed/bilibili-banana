@@ -13,7 +13,7 @@ class _NewsApiSerivce implements NewsApiSerivce {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://api.vvhan.com/api/hotlist/bili';
+    baseUrl ??= 'https://api.vvhan.com/api/hotlist';
   }
 
   final Dio _dio;
@@ -22,26 +22,26 @@ class _NewsApiSerivce implements NewsApiSerivce {
 
   @override
   Future<HttpResponse<List<ArticleModel>>> getNewsArticles() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<HttpResponse<List<ArticleModel>>>(Options(
       method: 'GET',
       headers: _headers,
-    ).compose(
-      _dio.options,
-      'https://api.vvhan.com/api/hotlist/bili',
-    )));
-
-    print(_result.data!['data']);
-    List<dynamic> articlesData = _result.data!['data'];
-    // List<ArticleModel> value = _result.data!['data']!
-    //     .map((dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>)).toList();
-    List<ArticleModel> value = articlesData.map((dynamic i) {
-      print("Mapping article: $i"); // 打印每个元素，确保它是一个 Map<String, dynamic>
-      return ArticleModel.fromJson(i as Map<String, dynamic>);
-    }).toList();
-    print("value:");
-    print(value);
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'bili',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>))
+        .toList();
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

@@ -18,3 +18,4 @@ class RemoveArticle extends LocalArticlesEvent {
 class SaveArticle extends LocalArticlesEvent {
   const SaveArticle(ArticleEntity articel) : super(articel: articel);
 }
+
