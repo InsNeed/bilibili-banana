@@ -1,6 +1,6 @@
 // theme_bloc.dart
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/features/daily_news/presentatsion/bloc/theme/bloc/theme_state.dart';
+import 'package:news/features/daily_news/presentation/bloc/theme/bloc/theme_state.dart';
 import 'theme_event.dart';
 import 'theme_state.dart';
 

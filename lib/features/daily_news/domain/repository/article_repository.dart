@@ -4,7 +4,6 @@ import 'package:news/features/daily_news/domain/entityies/articel.dart';
 abstract class ArticleRepository {
   Future<DataState<List<ArticleEntity>>> getNewsArticles();
 
-
   Future<List<ArticleEntity>> getSavedArticles();
 
   Future<void> saveArticle(ArticleEntity article);
